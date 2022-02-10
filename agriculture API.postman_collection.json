@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "6e8d1a4c-8d81-4fe1-818e-18055a0ecbac",
+		"name": "agriculture API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "products request",
+			"item": [
+				{
+					"name": "create products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZGZlYWE4YTA2MjY1ZWZkNjhhMTIyZSIsImZpcnN0TmFtZSI6ImFuZ2UiLCJsYXN0TmFtZSI6Im5pY29sZSIsInBob25lIjoiKzI1MDc4ODczODYxNiIsImVtYWlsIjoic2VsbGVyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjpudWxsLCJhZGRyZXNzIjoiZ2lrb25kbyIsImdlbmRlciI6ImZlbWFsZSIsInJvbGUiOiJzZWxsZXIiLCJjcmVhdGVkQXQiOiIyMDIyLTAxLTEzVDA5OjAyOjMyLjczMVoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAxLTEzVDA5OjAyOjMyLjczMVoiLCJfX3YiOjB9LCJpYXQiOjE2NDIwNjQ1Njd9.Sx7_B7bOuUmnv9KtFlFLz3hNVga3X70Sq24U7sHMhls",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productname\": \"irish potatoes\",\r\n    \"description\": \"irish potatoes in Rwanda is planted on hillsides at a high altitude of between 1,900m and 2,500m, and on well-drained marshes at an altitude of between 1,550m and 1,800m. Production of tea has increased steadily, from 60 Metric Tons of tea in 1958 to about 30,000 Metric Tons annually today.\",\r\n    \"availablequantity\": \"100kg\",\r\n    \"date\": \"2022/05/13\",\r\n    \"price\": \"$8/kg\",\r\n    \"images\": [\r\n        \"https://cdn1.sph.harvard.edu/wp-content/uploads/sites/30/2019/07/beverage-blur-cup-370018-1200x875.jpg\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/products/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5050/products/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/products/61dfeb25a06265efd68a1232",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"products",
+								"61dfeb25a06265efd68a1232"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5050/products/61d6c0dae908d92611a02a34",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"products",
+								"61d6c0dae908d92611a02a34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update one product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZGZmMDE5N2RmNjNlMGU2NWUzMjBjOSIsImZpcnN0TmFtZSI6ImFuZ2UiLCJsYXN0TmFtZSI6Im5pY29sZSIsInBob25lIjoiKzI1MDc4ODczODYxNiIsImVtYWlsIjoic2VsbGVyMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6bnVsbCwiYWRkcmVzcyI6Imdpa29uZG8iLCJnZW5kZXIiOiJmZW1hbGUiLCJyb2xlIjoic2VsbGVyIiwiY3JlYXRlZEF0IjoiMjAyMi0wMS0xM1QwOToyNTo0NS4zMzdaIiwidXBkYXRlZEF0IjoiMjAyMi0wMS0xM1QwOToyNTo0NS4zMzdaIiwiX192IjowfSwiaWF0IjoxNjQyMDY1OTU1fQ.X7_cSI5V081W2mkHpzo5yD89-RTYEKABK_puTgn2C1s",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"availablequantity\": \"70kg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/products/61dfeb25a06265efd68a1232",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"products",
+								"61dfeb25a06265efd68a1232"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user request",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"ange\",\r\n    \"lastName\": \"nicole\",\r\n    \"email\": \"seller1@gmail.com\",\r\n    \"password\": \"uwajee@M12345\",\r\n    \"phone\": \"+250788738616\",\r\n    \"address\": \"gikondo\",\r\n    \"gender\": \"female\",\r\n    \"role\": \"seller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/user/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5050/user/61d6bc0d263aec932ca4e7cd",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"61d6bc0d263aec932ca4e7cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/user/61d6bc8c263aec932ca4e7d1",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"61d6bc8c263aec932ca4e7d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gender\":\"other\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/user/61d6bc8c263aec932ca4e7d1",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"61d6bc8c263aec932ca4e7d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"client@gmail.com\",\r\n    \"password\": \"uwajee@M12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order request",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxZGZlODI2MzM2ZGRjZjEyYzI2NmM0OCIsImZpcnN0TmFtZSI6ImFuZ2UiLCJsYXN0TmFtZSI6Im5pY29sZSIsInBob25lIjoiKzI1MDc4ODczODYxNiIsImVtYWlsIjoiY2xpZW50QGdtYWlsLmNvbSIsInBhc3N3b3JkIjpudWxsLCJhZGRyZXNzIjoiZ2lrb25kbyIsImdlbmRlciI6ImZlbWFsZSIsInJvbGUiOiJidXllciIsImNyZWF0ZWRBdCI6IjIwMjItMDEtMTNUMDg6NTE6NTAuMDYxWiIsInVwZGF0ZWRBdCI6IjIwMjItMDEtMTNUMDg6NTE6NTAuMDYxWiIsIl9fdiI6MH0sImlhdCI6MTY0MjA2Nzg3NX0.Dc2m6ByNuZS3V1dM_K8wLRgye6fjEar_g9Sy8wDoo6k",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantity\":19\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/order/61dfeb25a06265efd68a1232",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"order",
+								"61dfeb25a06265efd68a1232"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/order/61d6e868c7ddf0787036ae67",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"order",
+								"61d6e868c7ddf0787036ae67"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/order/61d6e868c7ddf0787036ae67",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"order",
+								"61d6e868c7ddf0787036ae67"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update all order",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n     \"address\": \"gicumbi\"   \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/order/61d6e8fd3750874cad2c74ef",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"order",
+								"61d6e8fd3750874cad2c74ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
