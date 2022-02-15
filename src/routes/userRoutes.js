@@ -5,14 +5,15 @@ import datachecker from '../middlewares/datachecker';
 
 
 const userRouter = express.Router(); 	
- userRouter.post("/register",
- datachecker.isEmailExist,
- Validator.newAccountRules(),
- Validator.ValidatorInput,
-  UserController.createUser)
+//  userRouter.post("/register",
+//  datachecker.isEmailExist,
+//  Validator.newAccountRules(),
+//  Validator.ValidatorInput,
+//   UserController.createUser)
 
 //import verfyAccess from "../middlewares/verifyAccess"
   
+
 userRouter.post("/register", UserController.createUser)
 
 userRouter.get("/all",UserController.getallUser)

@@ -21,11 +21,12 @@ class Validator{
     }
     static newproductsRules(){
         return[
-        check("productname","title is invalid").trim().isString(),
+        check("title","title is invalid").trim().isString(),
         check("description","description should be valid").trim().isString(),
         check("price","price  should be valid").trim().isString(),
         check("availablequantity","availablequantity should be valid").trim(). isString(),
-        check("date"," due date should be valid").trim(). isDate(),
+        check("posted_date"," due date should be valid").trim(). isDate(),
+        check("expired_date"," due date should be valid").trim(). isDate(),
         ];
     }
     
