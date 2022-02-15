@@ -12,10 +12,10 @@ const agricultureSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId,
       ref: "products",
     },
+
     quantity: Number,
     status: {
       type: String,
-
       enum: ["pending", "accepted", "declined", "canceled"],
 
       default: "pending",
@@ -32,7 +32,7 @@ agricultureSchema.pre(/^find/, function (next) {
     select: "firstName lastName phone email address gender",
   }).populate({
     path: "product",
-    select:"productname"
+    select:"ProductName"
   });
   next();
 });

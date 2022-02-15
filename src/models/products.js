@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const productsSchema = new mongoose.Schema(
   {
-    title: String,
+    ProductName: String,
     description: String,
     available_quantity: String,
     image: [
@@ -12,13 +12,15 @@ const productsSchema = new mongoose.Schema(
     posted_date: String,
     expired_date: String,
     price: String,
-    seller_name: {
+    seller_phone: String,
+    seller: {
       type: mongoose.Schema.ObjectId,
       ref: "User",
+
     },
-    seller_phone: String,
   },
 
+  
   {
     timestamps: true,
   }
@@ -27,7 +29,7 @@ const productsSchema = new mongoose.Schema(
 productsSchema.pre(/^find/, function (next) {
   this.populate({
     path: "seller",
-    select: "firstname lastname phone email address gender",
+    select: "firstName lastName phone email address gender",
   });
   next();
 });

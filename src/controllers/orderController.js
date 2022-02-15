@@ -11,18 +11,20 @@ class orderController {
       quantity: req.body.quantity,
     });
 
-    
+   
     if (!Order) {
       return res.status(404).json({ error: "order not registered" });
     }
-
+    
     sendSms.sendSmsToSeller(
       req.user.lastName,
       req.user.phone,
-      product.productname,
+      product.ProductName,
       req.body.quantity,
       product.seller.phone
     );
+
+    console.log(product);
 
     return res
       .status(200)
@@ -67,7 +69,6 @@ class orderController {
   }
 
 
-
   static async patchallOrder(req, res) {
     const Order = await orderInfo.findByIdAndDelete(req.params.id);
     if (!Order) {
@@ -87,7 +88,7 @@ class orderController {
     console.log(order)
     sendSms.sendSmsToBuyer(
       order.buyer.firstName,
-      order.product.productname,
+      order.product.ProductName,
       order._id,
       order.buyer.phone
     );

@@ -21,7 +21,6 @@ const userSchema = new Mongoose.Schema(
       type: String,
       enum: ["male", "female", "other", "not-say"],
     },
-
     role: {
       type: String,
       default: "buyer",
@@ -33,5 +32,10 @@ const userSchema = new Mongoose.Schema(
   }
 );
 
+
+
+
 const user = Mongoose.model("User", userSchema);
+
+
 export default user;

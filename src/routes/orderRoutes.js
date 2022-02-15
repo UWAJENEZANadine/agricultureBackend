@@ -13,7 +13,8 @@ orderRouter.patch("/status/:id", verifyToken, verfyAccess("seller"), orderContro
 // orderRouter.get("/all/orders", orderController.getAllOrders)
 orderRouter.get("/:id",orderController.getOneOrder)
 orderRouter.patch("/all", verifyToken, verfyAccess("admin"), orderController.patchallOrder)
-orderRouter.get("/allClientOder", verifyToken, verfyAccess("seller"), orderController. getAllClientOrder)
+orderRouter.get("/allClientOrder", verifyToken, verfyAccess("seller"), orderController. getAllClientOrder)
+
 
 
 

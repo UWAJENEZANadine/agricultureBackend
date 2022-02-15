@@ -33,7 +33,6 @@ app.use("/", (req, res) => res.status(200).json({
  	
    message:"This is Agriculture APi"
 
- 	
 }));
 const dbUrl =process.env.DATABASEURL;
 mongoose.connect(dbUrl).then(()=>console.log("database connected successfull"));
