@@ -25,4 +25,6 @@ productsroute.patch(
   datachecker.checkProductAccess,
   productscontroller.updateOneProduct
 );
+
+
 export default productsroute;
