@@ -17,5 +17,4 @@ orderRouter.get("/allClientOrder", verifyToken, verfyAccess("seller"), orderCont
 
 
 
-
 export default orderRouter;

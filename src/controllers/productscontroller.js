@@ -42,7 +42,7 @@ class productscontroller {
   }
   //delete one product
   static async deleteoneproduct(req, res) {
-    const products = await productsInfos.findById(req.params.id);
+    const products = await productsInfos.findByIdAndDelete(req.params.id);
     if (!products) {
       return res.status(404).json({ error: "unable to delete products" });
     }
