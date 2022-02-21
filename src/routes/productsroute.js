@@ -15,16 +15,16 @@ productsroute.post(
   Validator.ValidatorInput,
   productscontroller.createproducts
 );
+
 productsroute.get("/all", productscontroller.getAllproducts);
 productsroute.get("/:id", productscontroller.getoneproduct);
 productsroute.delete("/:id", productscontroller.deleteoneproduct);
 productsroute.patch(
   "/:id",
-  verifyToken,
-  verifyAccess("seller"),
-  datachecker.checkProductAccess,
+  // verifyToken,
+  // verifyAccess("seller"),
+  // datachecker.checkProductAccess,
   productscontroller.updateOneProduct
 );
-
 
 export default productsroute;

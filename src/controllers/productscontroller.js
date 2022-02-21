@@ -19,6 +19,9 @@ class productscontroller {
     });
   }
 
+
+  
+
   // get all products
 
   static async getAllproducts(req, res) {
@@ -57,5 +60,7 @@ class productscontroller {
     return res.status(200).json({ message: "products updated successfully",data:product });
   }
 }
+
+
 
 export default productscontroller;
